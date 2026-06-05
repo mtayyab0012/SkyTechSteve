@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jason Avatar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- ==================== PROTECTION SCRIPTS ==================== -->
+
+<script>
+      // 2. Disable Right Click
+      document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+      // 3. Disable Keyboard Shortcuts
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'F12') { e.preventDefault(); return false; }
+        if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return false; }
+        if(e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) { e.preventDefault(); return false; }
+        if(e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) { e.preventDefault(); return false; }
+        if(e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); return false; }
+        if(e.ctrlKey && (e.key === 's' || e.key === 'S')) { e.preventDefault(); return false; }
+        if(e.ctrlKey && (e.key === 'a' || e.key === 'A')) { e.preventDefault(); return false; }
+      });
+
+      // 4. Detect DevTools Open — clears page
+      var devtoolsOpen = false;
+      setInterval(function(){
+        var threshold = 160;
+        if(
+          window.outerWidth - window.innerWidth > threshold ||
+          window.outerHeight - window.innerHeight > threshold
+        ){
+          if(!devtoolsOpen){
+            devtoolsOpen = true;
+            document.body.innerHTML = "<div style='display:flex;align-items:center;justify-content:center;height:100vh;font-family:Arial;background:#1a1a1a;color:#fff;font-size:24px;'>⛔ DevTools Detected</div>";
+          }
+        } else {
+          devtoolsOpen = false;
+        }
+      }, 500);
+
+      // 5. Disable drag and drop of elements
+      document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+      // 6. Disable printing
+      window.onbeforeprint = function(){ document.body.innerHTML = ""; };
+    </script>
+    <!-- ==================== END PROTECTION ==================== -->
+    
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="stop-btn" onclick="stopSound()">⚙️SkyTech Innovations &reg;</div>
+
+<div class="grid">
+
+<!-- GREEN -->
+<button class="green" onclick="playSound('1-Greeting')">Hello?</button>
+<button class="yellow" onclick="playSound('Thanks')">Thanks for Ask</button>
+    <button class="orange" onclick="playSound('Great')">Calling From-1</button>
+  <button class="blue" onclick="playSound('CanYou')">Name is Emily</button>
+    
+    
+<button class="green" onclick="playSound('2-Opening')">Greeting-1</button>
+    <button class="yellow" onclick="playSound('CanISpeak')">Can You Hear</button>
+    <button class="orange" onclick="playSound('Busy')">Calling From-2</button>
+<button class="blue" onclick="playSound('Comapny')">Name is Olivia</button>
+    
+    
+<button class="green" onclick="playSound('Home')">Greeting-2</button>
+<button class="yellow" onclick="playSound('HowLong')">Good to Know</button>
+<button class="orange" onclick="playSound('RealPerson')">Not Interested1</button>
+    <button class="blue" onclick="playSound('CallYouBack')">Great Question</button>
+    
+
+
+<button class="green" onclick="playSound('HvSys')">Opening-1</button>
+<button class="yellow" onclick="playSound('Upgrade')">Own or Rent</button>
+    <button class="orange" onclick="playSound('Benefits')">Not Interested2</button>
+    <button class="blue" onclick="playSound('DogGun')">Is That Ok</button>
+
+    <button class="green" onclick="playSound('IfWe')">Opening-2</button>
+    <button class="yellow" onclick="playSound('NI')">Don't Switch</button>
+    <button class="orange" onclick="playSound('Yes')">Limited Time Pr</button>
+    <button class="blue" onclick="playSound('Dog')">Repeat That</button>
+
+    <button class="green" onclick="playSound('QXfer')">If We Gave You</button>
+    <button class="yellow" onclick="playSound('Afford')">Upgrade</button>
+    <button class="orange" onclick="playSound('No')">Few Left</button>
+    <button class="blue" onclick="playSound('Dnc')">Ok</button>
+
+    <button class="green" onclick="playSound('IsThatOk')">Transfer-IsThatOk</button>
+    <button class="yellow" onclick="playSound('LetMe')">Busy</button>
+    <button class="orange" onclick="playSound('POA')">How Much</button>
+    <button class="blue" onclick="playSound('Good')">Good</button>
+
+
+</div>
+
+<div class="stop-btn" onclick="stopSound()">STOP</div>
+
+</div> <!-- container -->
+<script src="script.js"></script>
+
+</body>
+    <!-- Zoom Controls HTML - paste inside your <body>, at the top -->
+<div class="zoom-controls">
+    <button onclick="zoomOut()">−</button>
+    <button onclick="zoomReset()">⊙</button>
+    <button onclick="zoomIn()">+</button>
+</div>
+
+<script>
+    let scale = 1;
+    const container = document.querySelector('.container');
+
+    function zoomIn() {
+        scale = Math.min(scale + 0.1, 2.0);
+        container.style.transform = `scale(${scale})`;
+    }
+    function zoomOut() {
+        scale = Math.max(scale - 0.1, 0.5);
+        container.style.transform = `scale(${scale})`;
+    }
+    function zoomReset() {
+        scale = 1;
+        container.style.transform = `scale(1)`;
+    }
+</script>
+
+</html>
